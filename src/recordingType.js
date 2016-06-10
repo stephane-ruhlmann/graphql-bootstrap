@@ -23,7 +23,14 @@ module.exports = new graphql.GraphQLObjectType({
     releaseDate : {
       description : "The recording release date",
       type : GraphQLString,
-      resolve : (recording) => moment(recording.releaseDate, "YYYYMMDD").format("DD-MM-YYYY")
+      args : {
+        dateFormat : {
+          description : "The output date format (default is 'DD-MM-YYY')",
+          type : GraphQLString,
+          defaultValue : "DD-MM-YYYY"
+        }
+      },
+      resolve : (recording, args) => moment(recording.releaseDate, "YYYYMMDD").format(args.dateFormat)
     }
   })
 });
