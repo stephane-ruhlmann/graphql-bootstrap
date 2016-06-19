@@ -1,0 +1,30 @@
+{
+  "name": "graphql-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-graphql": "^0.5.3",
+    "graphql": "^0.6.0",
+    "moment": "^2.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  },
+  "scripts": {
+    "start": "node --harmony index.js",
+    "watch": "nodemon --harmony index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephane-ruhlmann/graphql-bootstrap.git"
+  },
+  "author": "stephane-ruhlmann <stephanej.ruhlmann@yahoo.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephane-ruhlmann/graphql-bootstrap/issues"
+  },
+  "homepage": "https://github.com/stephane-ruhlmann/graphql-bootstrap#readme"
+}
