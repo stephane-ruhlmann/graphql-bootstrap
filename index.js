@@ -1,7 +1,7 @@
 "use strict";
 const express = require("express");
 const httpGraphql = require("express-graphql");
-const schema = require("./src/schema");
+const schema = require("./src/schemas/root");
 
 const app = express();
 

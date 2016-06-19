@@ -5,8 +5,8 @@ const GraphQLSchema = graphql.GraphQLSchema;
 const GraphQLObjectType = graphql.GraphQLObjectType;
 const GraphQLList = graphql.GraphQLList;
 
-const recordingType = require("./recordingType");
-const data = require("./data");
+const recordingType = require("./recording");
+const data = require("./../data/index");
 
 const queryType = new GraphQLObjectType({
   name : "RootQuery",
