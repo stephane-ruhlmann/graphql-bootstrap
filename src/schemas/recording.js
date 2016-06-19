@@ -3,6 +3,8 @@ const graphql = require("graphql");
 const moment = require("moment");
 const GraphQLNonNull = graphql.GraphQLNonNull;
 const GraphQLString = graphql.GraphQLString;
+const Artist = require("./recordingArtist");
+const getArtist = require("../data").getArtist;
 
 module.exports = new graphql.GraphQLObjectType({
   name : "Recording",
@@ -18,7 +20,8 @@ module.exports = new graphql.GraphQLObjectType({
     },
     artist : {
       description : "The artist credited for this recording",
-      type : GraphQLString
+      type : Artist,
+      resolve : (recording) => getArtist(recording.artist)
     },
     releaseDate : {
       description : "The recording release date",

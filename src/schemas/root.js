@@ -5,7 +5,8 @@ const GraphQLSchema = graphql.GraphQLSchema;
 const GraphQLObjectType = graphql.GraphQLObjectType;
 const GraphQLList = graphql.GraphQLList;
 
-const recordingType = require("./recording");
+const Recording = require("./recording");
+const Artist = require("./recordingArtist");
 const data = require("./../data/index");
 
 const queryType = new GraphQLObjectType({
@@ -13,11 +14,11 @@ const queryType = new GraphQLObjectType({
   fields : () => ({
     recordings : {
       description : "A list of all recordings",
-      type : new GraphQLList(recordingType),
+      type : new GraphQLList(Recording),
       resolve : () => data.getRecordings()
     },
     recording : {
-      type : recordingType,
+      type : Recording,
       args : {
         id : {
           description : "id of recording",
@@ -25,6 +26,10 @@ const queryType = new GraphQLObjectType({
         }
       },
       resolve : (root, args) => data.getRecording(args.id)
+    },
+    artists : {
+      type : new GraphQLList(Artist),
+      resolve : () => data.getArtists()
     }
   })
 });
