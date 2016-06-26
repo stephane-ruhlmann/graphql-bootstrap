@@ -11,6 +11,11 @@ const data = require("./data");
 const queryType = new GraphQLObjectType({
   name : "RootQuery",
   fields : () => ({
+    recordings : {
+      description : "A list of all recordings",
+      type : new GraphQLList(recordingType),
+      resolve : () => data.getRecordings()
+    },
     recording : {
       type : recordingType,
       args : {
