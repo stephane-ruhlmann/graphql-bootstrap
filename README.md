@@ -1,5 +1,6 @@
 # graphql-bootstrap
 This project aims to demonstrate GraphQL capabilities through a simple node/Express server exposing music recordings data.
+This repository is the result of a live coding session during the first ever GraphQL meetup in Paris https://www.meetup.com/fr-FR/GraphQL-Paris/events/231911562/
 
 ## Install
 ```sh
